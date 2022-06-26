@@ -57,12 +57,13 @@ class SpringBootDemoApplicationTests {
 		Spid spid = spidService.createSpid(user);
 	}
 
+
 	@Test
 	public void creatingTwoSpidsFromTheSameUserShouldFail() {
-		Spid spid = spidService.createSpid(user);
+		Spid spid = spidService.createSpid(user2);
 
 		try {
-			Spid spid2 = spidService.createSpid(user);
+			Spid spid2 = spidService.createSpid(user2);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
