@@ -1,9 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.Repository.UserRepository;
-import com.example.demo.Service.UserService;
-import com.example.demo.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

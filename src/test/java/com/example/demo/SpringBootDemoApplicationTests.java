@@ -2,14 +2,16 @@ package com.example.demo;
 
 import com.example.demo.Service.SpidService;
 import com.example.demo.Service.UserService;
-import com.example.demo.entities.Spid;
-import com.example.demo.entities.User;
+import com.example.demo.Entities.Spid;
+import com.example.demo.Entities.User;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
+
 @SpringBootTest(classes = {SpringBootDemoApplication.class})
 class SpringBootDemoApplicationTests {
 
@@ -65,6 +67,15 @@ class SpringBootDemoApplicationTests {
 			System.out.println(e);
 		}
 	}
+	@Test
+	public void getUser(){
+		userService.getUser(1L).ifPresent(u -> System.out.println(u));
+	}
+
+	@Test
+	public void getSpid(){
+		spidService.getSpid(1L).ifPresent(s -> System.out.println(s));
+	}
 
 	@Test
 	public void deleteUser(){
@@ -79,6 +90,14 @@ class SpringBootDemoApplicationTests {
 			System.out.println(e);
 		}
 	}
+
+	@Test
+	public void search(){
+		List res = userService.serachUserByName("albin");
+		System.out.println(res);
+	}
+
+
 
 }
 

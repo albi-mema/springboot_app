@@ -1,8 +1,7 @@
-package com.example.demo.entities;
+package com.example.demo.Entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 

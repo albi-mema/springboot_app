@@ -1,7 +1,7 @@
 package com.example.demo.Repository;
 
-import com.example.demo.entities.Spid;
-import com.example.demo.entities.User;
+import com.example.demo.Entities.Spid;
+import com.example.demo.Entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 

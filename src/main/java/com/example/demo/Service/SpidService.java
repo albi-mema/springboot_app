@@ -2,14 +2,15 @@ package com.example.demo.Service;
 
 
 import com.example.demo.Repository.SpidRespository;
-import com.example.demo.entities.Spid;
-import com.example.demo.entities.Status;
-import com.example.demo.entities.Type;
-import com.example.demo.entities.User;
+import com.example.demo.Entities.Spid;
+import com.example.demo.Entities.Status;
+import com.example.demo.Entities.Type;
+import com.example.demo.Entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SpidService {
@@ -21,6 +22,9 @@ public class SpidService {
         return spidRepository.save(newSpid);
     }
 
+    public Optional<Spid> getSpid(long id){
+        return spidRepository.findById(id);
+    }
     public List<Spid> getAllSpid(){
         return spidRepository.findAll();
     }
