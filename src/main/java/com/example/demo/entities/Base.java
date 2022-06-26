@@ -1,6 +1,5 @@
 package com.example.demo.entities;
 
-import com.zaxxer.hikari.util.ClockSource;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -17,8 +16,8 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class Base {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private Timestamp createdAt = new Timestamp(System.currentTimeMillis());
-    private String createdBy;
+    private String createdBy = "Admin";
 }

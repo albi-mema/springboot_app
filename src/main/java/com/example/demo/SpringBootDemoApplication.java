@@ -17,16 +17,7 @@ public class SpringBootDemoApplication implements CommandLineRunner {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
 	}
 
-	public void run(String...args) throws Exception{
-/*
-		UserService userService = null;
-
-		User un = new User();
-		userService.createUser(un);
-		System.out.println(un);*/
-
+	public void run(String... args) throws Exception {
 	}
-
 }
-
 
