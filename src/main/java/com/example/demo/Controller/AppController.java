@@ -64,7 +64,7 @@ public class AppController {
     @DeleteMapping("/users/{id}/deleteUser")
     public ResponseEntity<User> deleteUser(@PathVariable("id") long id){
         userService.deleteUser(id);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity("User was deleted.",HttpStatus.OK);
     }
 
     @PostMapping("/users/{id}/createSpid")
