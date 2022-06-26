@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,11 +43,47 @@ public class AppController {
         return new ResponseEntity(spidService.getSpid(id),HttpStatus.OK);
     }
 
-    @PostMapping("/users/new_user")
+    @PostMapping("/users/create_user")
     public ResponseEntity<User> createUser(@RequestBody User user){
         return new ResponseEntity(userService.createUser(user),HttpStatus.OK);
 
     }
+
+    @PutMapping("/users/{id}/editUser")
+    public ResponseEntity<User> updateUser(@PathVariable("id") long id,@RequestBody User user){
+        return new ResponseEntity(userService.updateUser(
+                id,
+                user.getName(),
+                user.getSurname(),
+                user.getCardNo(),
+                user.getUsername(),
+                user.getPassword(),
+                user.getEmail()),HttpStatus.OK);
+    }
+
+    @DeleteMapping("/users/{id}/deleteUser")
+    public ResponseEntity<User> deleteUser(@PathVariable("id") long id){
+        userService.deleteUser(id);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PostMapping("/users/{id}/createSpid")
+    public  ResponseEntity<Optional<Spid>> createSpid(@PathVariable("id") long id){
+        User user = userService.getUser(id).get();
+        return new ResponseEntity(spidService.createSpid(user),HttpStatus.OK);
+    }
+
+    @PostMapping("/users/{id}/updateSpid")
+    public  ResponseEntity<Spid> updateSpid(@PathVariable("id") long id){
+        return new ResponseEntity(spidService.changeSpidStatu(id),HttpStatus.OK);
+    }
+
+
+
+
+
+
+
 
 
 
