@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
 
 @SpringBootTest(classes = {SpringBootDemoApplication.class})
 class SpringBootDemoApplicationTests {
@@ -94,7 +92,7 @@ class SpringBootDemoApplicationTests {
 
 	@Test
 	public void search(){
-		List res = userService.serachUserByName("albin");
+		List res = userService.searchUserByName("albin");
 		System.out.println(res);
 	}
 

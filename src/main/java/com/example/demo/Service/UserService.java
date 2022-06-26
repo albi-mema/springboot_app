@@ -24,7 +24,7 @@ public class UserService {
         return user;
     }
 
-    public List<User> serachUserByName(String name){
+    public List<User> searchUserByName(String name){
         return userRepository.findUsersByName(name);
     }
 
